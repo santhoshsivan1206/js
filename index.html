@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BOOKTICKETNOW.com</title>
+	<style>
+		a {
+			background-color: #242333;
+			color: #fff;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			margin-right: 10px;
+			text-decoration:none;
+		}
+		
+		/* a:hover {
+  			color: red;
+  			
+		} */
+
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		header {
+			background-color: #242333;
+			color: #fff;
+			padding: 10px;
+			text-align: center;
+		}
+		nav {
+			background-color: #ccc;
+			padding: 10px;
+			text-align: center;
+		}
+		nav ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+		nav ul li {
+			color: #ccc;
+			display: inline-block;
+			margin: 0 10px;
+		}
+		nav a {
+			color:bisque;
+			text-decoration: none;
+			padding: 5px;
+		}
+		nav a:hover {
+			background-color: #333;
+			color: #fff;
+		}
+		h1 {
+			text-align: center;
+			margin-top: 50px;
+		}
+		h2{
+			text-align: center;
+		}
+		form {
+			max-width: 500px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #f2f2f2;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+		}
+		label {
+			display: block;
+			margin-bottom: 10px;
+			font-weight: bold;
+		}
+		input[type="text"], input[type="password"], input[type="email"], input[type="tel"], input[type="date"] {
+			width: 100%;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			margin-bottom: 20px;
+			font-size: 16px;
+		}
+		input[type="submit"], input[type="reset"] {
+			background-color: #242333;
+			color: #fff;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			margin-right: 10px;
+		}
+		input[type="submit"]:hover, input[type="reset"]:hover {
+			background-color: #fff;
+			color: #242333;
+			border: 1px solid #242333;
+		}
+		#now-showing-page table {
+			border-collapse: collapse;
+			border: 3px solid #242333;
+			border-radius: 10px;
+			margin: 0 auto;
+			overflow: hidden;
+		}
+
+		#now-showing-page th,
+		#now-showing-page td {
+			padding: 10px;
+			text-align: center;
+			border: 2px solid #242333;
+		}
+
+		#now-showing-page th {
+			background-color: #242333;
+			color: white;
+		}
+
+		.error {
+			color: red;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>BOOKTICKETNOW.COM</h1>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="#booking-page">Book a Ticket</a></li>
+			<li><a href="#now-showing-page">Now Showing</a></li>
+		</ul>
+	</nav>
+	<section id="booking-page">
+		<h2>Book a Ticket</h2>
+		<form method="post" action="#" id="booking-form">
+			<label for="movie">Select a Movie:</label>
+			<select name="movie" id="movie">
+				<option value="">Choose a Movie</option>
+				<option value="1">Poniyin Selven - 2</option>
+				<option value="2">Virupaksha</option>
+				<option value="3">Rudhran</option>
+			</select>
+			<br>
+			<label for="seats">Select Number of Seats:</label>
+			<input type="number" name="seats" id="seats" min="1" max="10" value="tickets"/>
+			<br><br>
+			<!-- <input type="submit"  onclick="bookTicket()" value="Book Now"> -->
+			<a href="movieseat.html">Book Now</a>
+			<input type="reset" value="Reset">		
+		</form>
+	</section>
+	<section id="now-showing-page">
+		<h2>Now Showing</h2>
+		<table>
+			<thead>
+				<tr>
+					<th>Movie</th>
+					<th>Time</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Poniyin Selven - 2</td>
+					<td>10:00 AM</td>
+				</tr>
+				<tr>
+					<td>Virupaksha</td>
+					<td>1:00 PM</td>
+				</tr>
+				<tr>
+					<td>Rudhran</td>
+					<td>4:00 PM</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+	<section id="signup-page">
+		<h2>Sign Up</h2>
+		<form method="post" action="#" id="signup-form">
+			<label for="reg-id">Registration ID*:</label>
+			<input type="text" name="reg-id" id="reg-id" required placeholder="23WP0001">
+			<label for="username">Username*:</label>
+			<input type="text" name="username" id="username" pattern="[A-Za-z]+" required placeholder="Enter username without digits">
+			<label for="password">Password*:</label>
+			<input type="password" name="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}" required placeholder="Minimum 8 characters with at least one small case, uppercase, digit and special character">
+			<label for="email">Email*:</label>
+			<input type="email" name="email" id="email" required placeholder="example@example.com">
+			<label for="mobile">Mobile Number*:</label>
+			<input type="tel" name="mobile" id="mobile" pattern="[0-9]{10}" required placeholder="Enter 10 digit mobile number without brackets or dashes">
+			<label for="dob">Date of Birth*:</label>
+			<input type="date" name="dob" id="dob" required>
+			<br><br>
+			<input type="submit" value="Submit">
+			<input type="reset" value="Cancel">
+		</form>
+		<div id="error-message"></div>
+	</section>
+	<script>
+		function bookTicket() {
+			console.log("Book Now button clicked");
+			window.location.href = "movieseat.html";
+
+
+		}
+		
+		const form = document.getElementById('signup-form');
+		const errorMessage = document.getElementById('error-message');
+		form.addEventListener('submit', function(event) {
+			const regId = document.getElementById('reg-id');
+			const username = document.getElementById('username');
+			const password = document.getElementById('password');
+			const email = document.getElementById('email');
+			const mobile = document.getElementById('mobile');
+			const dob = document.getElementById('dob');
+			if (!regId.checkValidity() || !username.checkValidity() || !password.checkValidity() || !email.checkValidity() || !mobile.checkValidity() || !dob.checkValidity()) {
+				event.preventDefault();
+				errorMessage.textContent = 'Please fill out all fields correctly.';
+			}
+			else{
+				alert("Registration Successfully! Happy Watching :)");
+			}
+		});
+	</script>
+</body>
+</html>
